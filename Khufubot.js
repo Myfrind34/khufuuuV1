@@ -630,7 +630,7 @@ khufuBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n
 //anti bad words by khufu
 if (antiToxic)
 if (bad.includes(messagesD)) {
-tos = ['يملحد','يكافر','استغفر ربك','هتروحو من ربنا فين ي معرصين','كافرررررررررررر']
+tos = ['استغفر ربك','استغفر ربك','استغفر ربك','استغفر ربك','استغفر ربك']
 sin =  tos[Math.floor(Math.random() * (tos.length))]
 reply(sin)
 if (m.text) {
@@ -972,11 +972,11 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-${isWin ? `@${winner.split('@')[0]} فاز!` : isTie ? `اتقفلت هععع اجين 😜❤` : `دورك ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
+${isWin ? `@${winner.split('@')[0]} فوز😂!` : isTie ? `ااتقفلت ياحبي عيد تاني ❤` : `دورك ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
 
-اهم حاجه انك مبسوط 😂❤t`
+عش ماشئت فاءنك 🥺ميت واحبب من شئت فاءنك مفارقه🥺`
 	    if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
 	    room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
 	    if (room.x !== room.o) await khufuBotInc.sendText(room.x, str, m, { mentions: parseMention(str) } )
@@ -992,7 +992,7 @@ ${isWin ? `@${winner.split('@')[0]} فاز!` : isTie ? `اتقفلت هععع ا
 	    if (roof) {
 	    let win = ''
 	    let tie = false
-	    if (m.sender == roof.p2 && /^(acc(ept)?|accept|yes|okay?|reject|no|later|nope(k.)?yes|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
+	    if (m.sender == roof.p2 && /^(acc(ept)?|موفق|yes|okay?|رفض|no|later|nope(k.)?yes|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 	    if (/^(reject|no|later|n|nope(k.)?yes)/i.test(m.text)) {
 	    khufuBotInc.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} Refuse Suit, Suit Canceled`, m)
 	    delete this.suit[roof.id]
@@ -1009,8 +1009,8 @@ ${isWin ? `@${winner.split('@')[0]} فاز!` : isTie ? `اتقفلت هععع ا
 
 Please Choose A Suit In The Respective Chat"
 Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) khufuBotInc.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
-	    if (!roof.pilih2) khufuBotInc.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih) khufuBotInc.sendText(roof.p, `Please Select \n\حجره🗿\nورقه📄\nمقص✂️`, m)
+	    if (!roof.pilih2) khufuBotInc.sendText(roof.p2, `Please Select \n\nحجره🗿\nورقه📄\nمقص✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
 	    if (!roof.pilih && !roof.pilih2) khufuBotInc.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
 	    else if (!roof.pilih || !roof.pilih2) {
@@ -1023,15 +1023,15 @@ Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    }
 	    let jwb = m.sender == roof.p
 	    let jwb2 = m.sender == roof.p2
-	    let g = /scissors/i
-	    let b = /rock/i
-	    let k = /paper/i
-	    let reg = /^(scissors|rock|paper)/i
+	    let g = /مقص/i
+	    let b = /حجره/i
+	    let k = /ورقه/i
+	    let reg = /^(مقص|حجره|ورقه)/i
 	    if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
 	    reply(`You Have Chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting For The Opponent To Choose` : ''}`)
-	    if (!roof.pilih2) khufuBotInc.sendText(roof.p2, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
+	    if (!roof.pilih2) khufuBotInc.sendText(roof.p2, '_اختار الخصم حان دورك', 0)
 	    }
 	    if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 	    roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
@@ -1050,10 +1050,10 @@ Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    else if (k.test(stage) && b.test(stage2)) win = roof.p
 	    else if (k.test(stage) && g.test(stage2)) win = roof.p2
 	    else if (stage == stage2) tie = true
-	    khufuBotInc.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
+	    khufuBotInc.sendText(roof.asal, `_*نتاءج العبه*_${tie ? '\nSERIES' : ''}
 
-@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Win \n` : ` Lost \n`}
-@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Win \n` : ` Lost \n`}
+@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == Win ? ` Win \n` : ` خساره \n`}
+@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == Win? ` Win \n` : ` خساره \n`}
 `.trim(), m, { mentions: [roof.p, roof.p2] })
 	    delete this.suit[roof.id]
 	    }
@@ -1094,25 +1094,25 @@ const reactionMessage = {
                 const timestampe = speed();
 const latensie = speed() - timestampe
                 const menulist = `┌─❖
-│「 hi😡 」
+│「   اهلا💙 」
 └┬❖ 「 ${pushname} 」
 ┌┤✑  انت مبسوط معانا? 😄
 │└────────────┈ ⳹
 │
-└─「 معلومات عن بوت😜 」       
-│𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-│𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-│𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
-│𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
-│𝗢𝘄𝗻𝗲𝗿 𝗡𝗼. : ${global.owner}
-│𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
-│𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-│𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
-│𝗧𝗼𝘁𝗮𝗹 𝗛𝗶𝘁 : ${jumlahcmd}
-│𝗧𝗼𝘁𝗮𝗹 𝗛𝗶𝘁 𝗧𝗼𝗱𝗮𝘆 : ${jumlahharian}
+└─「 بوت Cool REBEL😎 」       
+│سرعه : ${latensie.toFixed(4)} miliseconds
+│مدة العرض : ${runtime(process.uptime())}
+│اسم البوت : ${global.botname}
+│مالك البوت : ${global.ownername}
+│مالك رقم. : ${global.owner}
+│اسم المضيف : ${os.hostname()}
+│منصة : ${os.platform()}
+│إجمالي المستخدم : ${Object.keys(global.db.data.users).length}
+│مجموع الضربات : ${jumlahcmd}
+│مجموع ضرب اليوم : ${jumlahharian}
 └┬────────────┈ ⳹
-   │✑  Please Select
-   │✑  The Button Below
+   │✑  الرجاء التحديد
+   │✑ الزر أدناه
    └─────────────┈ ⳹`
    
    //randoming function
@@ -1155,7 +1155,7 @@ async function cerpen (category) {
 
 switch(command) {
 	
- case 'banchat': {
+ case 'banchat': case 'اخرس': {
  if (isBan) return reply(mess.ban)	 			
 if (!isCreator) return replay(mess.owner)
 if (args[0] === "on") {
@@ -1168,7 +1168,7 @@ var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nThe bot has been disabled in this group, now no one will able to use the bot in this group!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nقام المالك بمنع البوت في هاذ الجروب`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!isBanChat) return replay('Already Unbanned')
 let off = banchat.indexOf(from)
@@ -1567,7 +1567,7 @@ if (isBanChat) return reply(mess.banChat)
                 reply(`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
             }
             break	
-        case 'ttc': case 'ttt': case 'XO': {
+        case 'ttc': case 'ttt': case 'XO': case 'اكسo': {
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             let TicTacToe = require("./lib/tictactoe")
@@ -1575,7 +1575,7 @@ if (isBanChat) return reply(mess.banChat)
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replay(`You Are Still In The Game`)
             let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
             if (room) {
-            reply('العبه بدات 🌚❤')
+            reply('جهز نفسك العبه بدات 🌚❤')
             room.o = m.chat
             room.game.playerO = m.sender
             room.state = 'PLAYING'
@@ -1614,19 +1614,19 @@ Type *surrender* to surrender and admit defeat`
             state: 'WAITING'
             }
             if (text) room.name = text
-            reply('استني الخصم 😡' + (text ? ` Type The Command Below ${prefix}${command} ${text}` : ''))
+            reply('استني صحبك يقبل' + (text ? ` Type The Command Below ${prefix}${command} ${text}` : ''))
             this.game[room.id] = room
             }
             }
             break
-            case 'delttc': case 'delttt': {
+            case 'delttc': case 'delttt': case '🦄🦄': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             this.game = this.game ? this.game : {}
             try {
             if (this.game) {
             delete this.game
-            khufuBotInc.sendText(m.chat, `Successfully Deleted The TicTacToe Session`, m)
+            khufuBotInc.sendText(m.chat, `الدور اتلغي X O`, m)
             } else if (!this.game) {
             reply(`TicTacToe🎮 Session Does Not Exist`)
             } else reply('?')
@@ -1635,7 +1635,7 @@ if (isBanChat) return reply(mess.banChat)
             }
             }
             break
-            case 'suitpvp': case 'suit': {
+            case 'suitpvp': case 'suit': case 'لعبه2': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             this.suit = this.suit ? this.suit : {}
@@ -1644,14 +1644,13 @@ if (isBanChat) return reply(mess.banChat)
             let timeout = 60000
             if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) return replay(`Complete Your Previous Suit`)
 	    if (m.mentionedJid[0] === m.sender) return reply(`Can't Play With Myself !`)
-            if (!m.mentionedJid[0]) return reply(`_Who Do You Want To Challenge?_\nTag The Person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
+            if (!m.mentionedJid[0]) return reply(`__من تريد ان تتحدي?_\nضع علامه علي الشخص\n\nnمثل : ${prefix} لعبه2 @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
             if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0])))  reply(`The Person You Are Challenging Is Playing Suit With Someone Else :(`)
             let id = 'suit_' + new Date() * 1
             let caption = `_*SUIT PvP*_
 
-@${m.sender.split`@`[0]} menantang @${m.mentionedJid[0].split`@`[0]} To Play Suit
-
-Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
+@${m.sender.split`@`[0]} تحدك @${m.mentionedJid[0].split`@`[0]} للعب حجره ورقه مقص
+Please @${m.mentionedJid[0].split`@`[0]} To Type موفق/رفض`
             this.suit[id] = {
             chat: await khufuBotInc.sendText(m.chat, caption, m, { mentions: parseMention(caption) }),
             id: id,
@@ -1803,7 +1802,7 @@ delete caklontong_desk[m.sender.split('@')[0]]
 }
 break
 		
-	case 'react': { 
+	case 'react': case '٠': { 
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 khufuBotInc.sendMessage(m.chat, reactionMessage)} 
@@ -1949,11 +1948,11 @@ if (isBanChat) return reply(mess.banChat)
 khufuBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
                     case 'stupid':
-      case 'foolish':
-      case 'smart':
-      case 'idiot':
+      case 'fool':
+      case 'ذكي':
+      case 'غبي بجداره':
       case 'gay':
-      case 'lesbi':
+      case 'مثالي':
       case 'bastard':
       case 'stubble':
       case 'dog':
@@ -2050,28 +2049,28 @@ case 'dare': case 'حكم':
                    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
               const dare =[
-    "غني ف نص بار اغنيه ركبني مرجيحه😂❤",
-    "روح قول ل كراش كسمك و ابعت اسكرين 🤓",
-    "ابعت بوسه ل اكتر حد بتحبو ف بار 🌚❤",
-    "صور نفسك ونت بتشقلب علي الارض 🤓❤",
+    "صلي علي النبي 100 مره ريكورد❤",
+    "صور نفسك وانت بتصلي 🧎‍♂️",
+    "روح قول ل ابوك انك فاطر 🌚❤",
+    "اقراء سورة الفاتحه 10مرات ريكورد",
     "اعمل منشن ع حد بتكرهو ف روم 😈❤",
-    "ابعت بوسه ل وحده ف روم 🙂❤",
-    "غني اغنيه حزينه متقلش عن دقيقه 😜❤",
-    "روح قول لل اكس نفسي نرجع و ارمي اسكرين 😡❤",
-	"اعمل صوت مره بتتناك ف روم 🙂❤",
+    "اكتب عش ماشئت فاءنك 🥺ميت واحبب من شئت فاءنك مفارقه 100 مره وابعت سكرينات ",
+    "روح قول ل ابوك هربت كام مره من المدرسه بما انك في شهر مبارك يمكن يسمحك وابعت ريكورد 😜❤",
+    "روح قول لتاني شات عندك يخول ياعرص وابعت اسكرين",
+	"روح اقول لاءبوك انا ممش راجل يابه انت مخلفتش رجله ووبعت ريكورد🙂❤",
     "افتح ريك و روح قول ل اي حد ف بيت متيجي امزه 😉❤",
     "روح قول لل اكس احلقي شنبك 🌚❤",
     "قول شعر ل شخص ال بتلعب معا 😍💗!",
     "اكتب عندك ف بايو اسم شخص بتحبو 🌚❤",
     "اكتب كلمه جدو و حط صوره ال هتجيلك بروفايل 😂❤",
-    "قول نكته ف ريك بس من غير بضان 🙂❤",
-    "اعمل منشن ع حد متعرفهوش ف بار وقول شرموط/ه 😜❤",
+    "قول نكته ف ريك بس لازم تكون حلوه عشان لو وحشه في حكم تاني اسواء 🙂❤",
+    "اشتم تحالفك كلو في رسالة عامه وبعت اسكرين و قله في عقاب 😜❤",
     "ابعت صوره ليك ونت اهطل فيها 🌚❤.",
-    "صور تفسك ونت بتشرب ميا ب ملح 🙄❤",
+    "صور نفسك ونت بتشرب ميا ب ملح 🙄❤",
     "صور نفسك ونت بترقص وبتغني بصوت عالي 😂❤",
     "نزل استوري قول انا اتخزوقت 🙂❤",
-    "رن علي ابن عمك/ ابن خالك/ ابن خالتك/ وقولو امك بتخوني مع ابوك وبعت تسجيل 🤓❤!",
-    "روح عند ابوك قولي انت طااق وتكون بتسجل ريك 😂❤",
+    "بص الحكم ده يقررو صاحب البوت بس لو منفزتوش ليه احقيه انو يغير صورة البروفيل تبعك يعني هيبعتلك صورة ويقلك حطه صورة 🤓❤!",
+    "روح عند ابوك قولي انت طااق وتكون بتسجل ريك? 😂❤",
     "روح قول ل امك بت سبتني 🙂❤",
      "روح ل ابوك قولو انا عايز 10 تلاف جنيه اروح ساحل 😜❤"
 ]
@@ -2080,7 +2079,7 @@ case 'dare': case 'حكم':
               khufuBotInc.sendMessage(from, { image: buffer, caption: '_You choose DARE_\n'+ khufudare }, {quoted:m})
               break
                             break
-       case 'truth':
+       case 'truth': case 'حقيقه😈':
        if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
               const truth =[
@@ -2137,18 +2136,18 @@ if (isBanChat) return reply(mess.banChat)
               predea = await axios.get(`https://api.agify.io/?name=${q}`)
               reply(`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Bro, Because No One Knows About Death_`)
               break  
-            case 'join': {
+            case 'join': case 'انضم': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
-                if (!text) return replay(`Enter The Group Link!`)
+                if (!text) return replay(`فين الينك؟`)
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replay(`Invalid Link!`)
                 reply(mess.wait)
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
                 await khufuBotInc.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
-                               case 'leavegc': case 'leavegroup': {
+                               case 'leavegc': case 'ترك': case 'leavegroup': {
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	reply(mess.wait)
@@ -2156,7 +2155,7 @@ if (isBan) return reply(mess.ban)
                 await khufuBotInc.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
-            case 'setexif': {
+            case 'setexif': case 'اسمملصق': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                if (!isCreator) return replay(`${mess.owner}`)
@@ -2214,7 +2213,7 @@ if (isBanChat) return reply(mess.banChat)
 		await khufuBotInc.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-        case 'unblock': {
+        case 'unblock': case 'فك بلوك': {
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!isCreator) return replay(`${mess.owner}`)
@@ -2222,7 +2221,7 @@ if (isBanChat) return reply(mess.banChat)
 		await khufuBotInc.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	    case 'setname': case 'اسمروم': case 'setsubject': {
+	    case 'setname': case 'اسم الروم': case 'اسم😂الروم': case 'setsubject': case 'اسمالروم': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -2232,7 +2231,7 @@ if (isBanChat) return reply(mess.banChat)
                 await khufuBotInc.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
             break
-          case 'setdesc': case 'وصفالروم': {
+          case 'setdesc': case 'وصفالروم': case 'وصف😂الروم': {
           	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -2267,13 +2266,13 @@ if (isBanChat) return reply(mess.banChat)
                 reply(mess.success)
                 }
                 break
-            case 'tagall': case 'منشن': {
+            case 'tagall': case 'منشن': case 'تاج': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
-let teks = `╚»˙·٠•●♥ منشن لكل اعضاء روم ♥●•٠·˙«╝ 
+let teks = `╚»˙·٠•●♥ رسالة لكل اعضاء روم ♥●•٠·˙«╝ 
  
  ➲ *Message : ${q ? q : 'no message'}*\n\n`
                 for (let mem of participants) {
@@ -2306,7 +2305,7 @@ if (isBanChat) return reply(mess.banChat)
                 reply(teks)
 	    }
 	    break
-               case 'vote': {
+               case 'vote': case 'تصويت': {
                	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
@@ -2350,7 +2349,7 @@ let buttonsVote = [
             khufuBotInc.sendMessage(m.chat, buttonMessageVote)
 	    }
             break
-               case 'upvote': {
+               case 'upvote': case 'موفق😂علي': {
                	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
@@ -2394,7 +2393,7 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
             khufuBotInc.sendMessage(m.chat, buttonMessageUpvote)
 	    }
              break
-                case 'devote': {
+                case 'devote': case 'غير😂موفق': {
                 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
@@ -2439,7 +2438,7 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 	}
             break
                  
-case 'checkvote':
+case 'checkvote': case 'النتيجه':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(`${mess.group}`)
@@ -2469,7 +2468,7 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 `
 khufuBotInc.sendTextWithMentions(m.chat, teks_vote, m)
 break
-		case 'deletevote': case'delvote': case 'hapusvote': {
+		case 'deletevote': case'delvote': case'حذفتصويت': case 'hapusvote': case 'حذف😂تصويت': {
 			if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
@@ -2498,7 +2497,7 @@ if (isBanChat) return reply(mess.banChat)
              }
             }
             break
-            case 'editinfo': {
+            case 'editinfo': case 'اعدادت😂مشرف': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -2556,7 +2555,7 @@ fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
 reply('autosticker pc deactivated')
 }
 break
-case 'antilinkgc': {
+case 'antilinkgc': case 'منع😂ربط😂المجموعه': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2565,14 +2564,14 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiLink) return replay('Already activated')
 ntilink.push(from)
-replay('Success in turning on group chat antilink in this group')
+replay('تم تشغيل مانع لينكات الجروب ياغالي ❤')
 var groupe = await khufuBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nإذا لم تكن مسؤولاً ، فلا ترسل رابط المجموعة في هذه المجموعة وإلا فسيتم طردك على الفور`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLink) return replay('Already deactivated')
 let off = ntilink.indexOf(from)
@@ -2618,7 +2617,7 @@ replay('Success in turning off youtube video antilink in this group')
   }
   }
   break
-    case 'antilinkyoutubech': case 'antilinkyoutubechannel': case 'antilinkytch': {
+    case 'antilinkyoutubech': case 'antilinkyoutubechannel': case 'antilinkytch': case 'منع😂لينك😂يوتيوب': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2627,14 +2626,14 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiLinkYoutubeChannel) return replay('Already activated')
 ntilinkytch.push(from)
-replay('Success in turning on youtube channel antilink in this group')
+replay('النجاح في تشغيل  مانع لينكات اليوتيوب ياغالي ❤ ')
 var groupe = await khufuBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube channel link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nإذا لم تكن مسؤولاً ، فلا ترسل رابط قناة youtube في هذه المجموعة وإلا فسيتم طردك على الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkYoutubeChannel) return replay('Already deactivated')
 let off = ntilinkytch.indexOf(from)
@@ -2649,7 +2648,7 @@ replay('Success in turning off youtube channel antilink in this group')
   }
   }
   break
-      case 'antilinkinstagram': case 'antilinkig': case 'antilinkinsta': {
+      case 'antilinkinstagram': case 'antilinkig': case 'antilinkinsta': case 'منع😂لينك😂انستجرام': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2658,14 +2657,14 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiLinkInstagram) return replay('Already activated')
 ntilinkig.push(from)
-replay('Success in turning on instagram antilink in this group')
+replay('تم تشغيل منع لينكات انستجرام ياغالي ❤')
 var groupe = await khufuBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the instagram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nإذا لم تكن مسؤولاً ، فلا ترسل رابط instagram في هذه المجموعة وإلا فسيتم طردك على الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkInstagram) return replay('Already deactivated')
 let off = ntilinkig.indexOf(from)
@@ -2680,7 +2679,7 @@ replay('Success in turning off instagram antilink in this group')
   }
   }
   break
-        case 'antilinkfacebook': case 'antilinkfb': {
+        case 'antilinkfacebook': case 'antilinkfb': case 'منع😂لينك😂فيسبوك': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2689,14 +2688,14 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiLinkFacebook) return replay('Already activated')
 ntilinkfb.push(from)
-replay('Success in turning on facebook antilink in this group')
+replay('النجاح في تشغيل مانع روابط الفيس بوك ياغالي ❤')
 var groupe = await khufuBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the facebook link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nإذا لم تكن مسؤولاً ، فلا ترسل رابط facebook في هذه المجموعة وإلا فسيتم طردك على الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkFacebook) return replay('Already deactivated')
 let off = ntilinkfb.indexOf(from)
@@ -2711,7 +2710,7 @@ replay('Success in turning off facebook antilink in this group')
   }
   }
   break
-          case 'antilinktelegram': case 'antilinktg': {
+          case 'antilinktelegram': case 'antilinktg': case 'منع😂لينك😂تيلجرام': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2720,14 +2719,14 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiLinkTelegram) return replay('Already activated')
 ntilinktg.push(from)
-replay('Success in turning on telegram antilink in this group')
+replay('النجاح في تشغيل مانع روابط التيلجرام ياغالي ❤')
 var groupe = await khufuBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the telegram link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nإذا لم تكن مسؤولاً ، فلا ترسل رابط telegram في هذه المجموعة وإلا فسيتم طردك على الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTelegram) return replay('Already deactivated')
 let off = ntilinkig.indexOf(from)
@@ -2742,7 +2741,7 @@ replay('Success in turning off telegram antilink in this group')
   }
   }
   break
-            case 'antilinktiktok': case 'antilinktt': {
+            case 'antilinktiktok': case 'antilinktt': case 'منع😂لينك😂تيكتوك': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2751,14 +2750,14 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiLinkTiktok) return replay('Already activated')
 ntilinktt.push(from)
-replay('Success in turning on tiktok antilink in this group')
+replay('النجاح في تشغيل مانع روابط التيك توك ياغالي ❤')
 var groupe = await khufuBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the tiktok link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nإذا لم تكن مشرفًا ، فلا ترسل رابط tiktok في هذه المجموعة وإلا فسيتم طردك على الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTiktok) return replay('Already deactivated')
 let off = ntilinktt.indexOf(from)
@@ -2773,7 +2772,7 @@ replay('Success in turning off tiktok antilink in this group')
   }
   }
   break
-            case 'antilinktwt': case 'antilinktwitter': case 'antilinktwit': {
+            case 'antilinktwt': case 'antilinktwitter': case 'antilinktwit': case 'منع😂لينك😂تويتر': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2782,14 +2781,14 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiLinkTwitter) return replay('Already activated')
 ntilinktwt.push(from)
-replay('Success in turning on twitter antilink in this group')
+replay('تم تشغيل مانع لينكات التويتر بنجاح ياغالي ❤')
 var groupe = await khufuBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the twitter link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nإذا لم تكن مسؤولاً ، فلا ترسل رابط تويتر في هذه المجموعة وإلا فسيتم طردك على الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkTwitter) return replay('Already deactivated')
 let off = ntilinktwt.indexOf(from)
@@ -2835,7 +2834,7 @@ replay('اتقفلت')
   }
   }
   break
-case 'antivirus': case 'antivirtex': {
+case 'antivirus': case 'antivirtex': case 'منع😂فيروسات': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2851,7 +2850,7 @@ var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nلا يسمح لأي شخص بإرسال فيروس في هذه المجموعة ، العضو الذي يرسل سيتم طرده على الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiVirtex) return replay('Already deactivated')
 let off = ntvirtex.indexOf(from)
@@ -2866,7 +2865,7 @@ replay('Success in turning off antivirus this group')
   }
   }
   break
-    case 'autoreply': {
+    case 'autoreply': case 'فرفشه': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2890,7 +2889,7 @@ replay('Success in turning off autoreply in this group')
   }
   }
   break
-case 'منعشتايم': {
+case 'منع😂شتايم': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2921,7 +2920,7 @@ replay('اتقفلت')
   }
   }
   break
-case 'antiwame': {
+case 'antiwame': case 'منعwame': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -2930,14 +2929,14 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (antiWame) return replay('Already activated')
 ntwame.push(from)
-replay('Success in turning on antiwame in this group')
+replay('تم تشغيل مانع wame ياغالي ❤')
 var groupe = await khufuBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNobody is allowed to send wa.me in this group, one who sends will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+khufuBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nلا أحد مسموح له بإرسال wa.me في هذه المجموعة ، الشخص الذي يرسل سيتم ركله على الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiWame) return replay('Already deactivated')
 let off = nttoxic.indexOf(from)
@@ -3006,7 +3005,7 @@ if (isBanChat) return reply(mess.banChat)
                 }
              }
              break
-case 'setppbot': case 'setbotpp': {
+case 'setppbot': case 'setbotpp': case 'بروفيل': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
@@ -3082,7 +3081,7 @@ if (isBanChat) return reply(mess.banChat)
 }
   break
 
-            case 'delete': case 'حذف': {
+            case 'delete': case 'حذف': case '🗑️': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.quoted) reply(false)
@@ -4381,7 +4380,7 @@ var walb = [
                 })
 //khufuBotInc.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
 break
-case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
+case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kisss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 					axios.get(`https://api.waifu.pics/sfw/${command}`)
@@ -4597,20 +4596,20 @@ Detek = tes.translate
 replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
 }
 break
-case 'sound1':
-case 'sound2':
-case 'sound3':
-case 'sound4':
-case 'sound5':
-case 'sound6':
-case 'sound7':
-case 'sound8':
-case 'sound9':
-case 'sound10':
-case 'sound11':
-case 'sound12':
-case 'sound13':
-case 'sound14':
+case 'Sound1':
+case 'Sound2':
+case 'Sound3':
+case 'Sound4':
+case 'Sound5':
+case 'Sound6':
+case 'Sound7':
+case 'Sound8':
+case 'Sound9':
+case 'Sound10':
+case 'Sound11':
+case 'Sound12':
+case 'Sound13':
+case 'Sound14':
 case 'sound15':
 case 'sound16':
 case 'sound17':
@@ -4675,16 +4674,16 @@ case 'sound75':
 case 'sound76':
 case 'sound77':
 case 'sound78':
-case 'sound79':
-case 'sound80':
-case 'sound81':
-case 'sound82':
-case 'sound83':
-case 'sound84':
-case 'sound85':
-case 'sound86':
-case 'sound87':
-case 'sound88':
+case 'Sound79':
+case 'Sound80':
+case 'Sound81':
+case 'Sound82':
+case 'Sound83':
+case 'Sound84':
+case 'Sound85':
+case 'Sound86':
+case 'Sound87':
+case 'Sound88':
 case 'sound89':
 case 'sound90':
 case 'sound91':
@@ -4740,24 +4739,24 @@ case 'sound140':
 case 'sound141':
 case 'sound142':
 case 'sound143':
-case 'sound144':
-case 'sound145':
-case 'sound146':
-case 'sound147':
-case 'sound148':
-case 'sound149':
-case 'sound150':
-case 'sound151':
-case 'sound152':
-case 'sound153':
-case 'sound154':
-case 'sound155':
-case 'sound156':
-case 'sound157':
-case 'sound158':
-case 'sound159':
-case 'sound160':
-case 'sound161':
+case 'Sound144':
+case 'Sound145':
+case 'Sound146':
+case 'Sound147':
+case 'Sound148':
+case 'Sound149':
+case 'Sound150':
+case 'Sound151':
+case 'Sound152':
+case 'Sound153':
+case 'Sound154':
+case 'Sound155':
+case 'Sound156':
+case 'Sound157':
+case 'Sound158':
+case 'Sound159':
+case 'Sound160':
+case 'Sound161':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 khufuy_buffer = await getBuffer(`https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
@@ -6001,7 +6000,7 @@ break
 	    })
 	    }
 	    break
-	case 'yts': case 'بحث': {
+	case 'yts': case 'ابحث': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
@@ -8434,20 +8433,20 @@ View List Of Messages With ${prefix}listmsg`)
                 }
                 break
             }
-            case 'public': {
+            case 'public': case 'للجميع': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
                 khufuBotInc.public = true
-                reply('Successful Change To Public Usage')
+                reply('البوت بقي للجميع')
             }
             break
-            case 'self': {
+            case 'self': case 'خاص': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
                 khufuBotInc.public = false
-                reply('Successful Change To Self Usage')
+                reply('البوت بقي خاص')
             }
             break
 		case 'creategroup':
@@ -8468,7 +8467,7 @@ if (isBanChat) return reply(mess.banChat)
 	}
 	break
 case 'setstatuts':
-case 'setbio':
+case 'setbio': case 'تغييرالاسم':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply('Send orders *#setbio text*')
@@ -8690,7 +8689,7 @@ khufuBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key
                                 }
                             }, {
                                 callButton: {
-                                    displayText: 'ozx 💗',
+                                    displayText: ' Mostafa 💗',
                                     url: `${botscript}`
                                 }
                             }, {
@@ -8723,7 +8722,7 @@ khufuBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key
                         } else if (setbot.templateDocument) {
                         let buttonmenu = [
         	{ urlButton: { displayText: `قناتي 🍒`, url : `${websitex}` } },
-            { urlButton: { displayText: `قناه اوزكس 🌚`, url: `${botscript}` } },
+            { urlButton: { displayText: `قناه مصطفي 🌚`, url: `${botscript}` } },
             { quickReplyButton: { displayText: `اوامر 😜`, id: 'allmenu'} },
             { quickReplyButton: { displayText: `القائمه❤`, id: 'command'} },
             { quickReplyButton: { displayText: `المالك🤣`, id: 'owner'} }
@@ -8753,101 +8752,101 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
-								"title": "bot khufu ❤️",
+								"title": "bot Mostafa ❤️",
 								"rows": [
 									{
 										"title": "اوامر كلها×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}allmenu`
 									},
 									{
 										"title": "اوامر المالك ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}ownermenu`
 										},
 									{
 										"title": "اوامر جروب ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}groupmenu`
 										},
 										{
 										"title": "اوامر لوجو ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}makermenu`
 									},
 									{
 										"title": "اوامر اغاني ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}soundmenu`
 									},
 									{
 										"title": "اوامر تحمل ×፝֟͜×️",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}downloadmenu`
 									},
 									{
 										"title": "اوامر ال استيكر×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}stickermenu`
 									},
 									{
 										"title": "اوامر البحث ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}searchmenu`
 									},
 									{
 										"title": "اعدادات اوامر×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}toolmenu`
 									},
 									{
 										"title": "اوامر صور ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}randomimagemenu`
 									},
 									{
 										"title": "تعديل علي صور ×፝֟͜×️",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}imageeffectmenu`
 									},
 										{
 											"title": "اوامر ال انمي ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}animemenu`
 										},
 										{
 											"title": "اوامر ايمو ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}emotemenu`
 										},
 										{
 										"title": "نمي استيكر ×፝֟͜×️",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}animestickermenu`
 									     },
 									{
 										"title": "شكس انمي ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}nsfwmenu`
 									     },
 										{
 											"title": "حجات مسليه ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}funmenu`
 										},
 										{
 										"title": "العاب ×፝֟͜×",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}indomenu`
 									},
 										{
 											"title": "اوامر صوت و استيكر ×፝֟͜×️",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}convertmenu`
 										},
 										{
 											"title": "اوامر جروب بل عربي ×፝֟͜×️",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}group11`
 										}
 								]
@@ -8857,7 +8856,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"rows": [
 									{
 										"title": "كلم شخص غريب",
-										"description": " ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×",
+										"description": " ᴹᴿ᭄Mostafa ×፝֟͜×",
 										"rowId": `${prefix}anonymousmenu`
 									}
 								]
@@ -8867,7 +8866,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"rows": [
 									{
 										"title": "شكرا ل ️",
-										"description": "ᴹᴿ᭄𝐾𝐻𝑈𝐹𝑈 ×፝֟͜×!",
+										"description": "ᴹᴿ᭄Mostafa ×፝֟͜×!",
 										"rowId": `${prefix}tqtt`
 									}
 								]
@@ -8883,65 +8882,152 @@ case 'allmenu': case 'اوامر':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'All Menu')
-await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」	
-╠ ${prefix}self
-╠ ${prefix}public
-╠ ${prefix}antitag
-╠ ${prefix}rentbot [add/del]
-╠ ${prefix}rentlist
-╠ ${prefix}ban [add/del]
-╠ ${prefix}banchat [on/off]
-╠ ${prefix}join [link]
-╠ ${prefix}leavegc
-╠ ${prefix}setbio
-╠ ${prefix}bcgroup [text]
-╠ ${prefix}bcall [text]
-╠ ${prefix}bcimage [image]
-╠ ${prefix}bcvideo [video]
-╠ ${prefix}bcaudio [audio]
-╠ ${prefix}bcloc [text]
-╠ ${prefix}setppbot [image]
-╠ ${prefix}setexif
-╠ ${prefix}block [tag/number]
-╠ ${prefix}unblock [tag/number]
-╠ ${prefix}coowner [add/del]
-╠═══════✪「 GROUP 」	        
-╠${prefix}grousetting
-╠${prefix}grouplink
-╠${prefix}ephemeral [option]
-╠${prefix}setgcpp [image]
-╠${prefix}setname [text]
-╠${prefix}setdesc [text]
-╠${prefix}group 
-╠${prefix}resetgrouplink
-╠${prefix}editinfo [option]
-╠${prefix}add [user]
-╠${prefix}kick [reply/tag]
-╠${prefix}hidetag [text]
-╠${prefix}tagall [text]
-╠${prefix}antilinkgc [on/off]
-╠${prefix}antilinktg [on/off]
-╠${prefix}antilinktt [on/off]
-╠${prefix}antilinkytch [on/off]
-╠${prefix}antilinkytvid [on/off]
-╠${prefix}antilinkig [on/off]
-╠${prefix}antilinkfb [on/off]
-╠${prefix}antilinktwit [on/off]
-╠${prefix}antilinkall [on/off]
-╠${prefix}antivirus [on/off]
-╠${prefix}antitoxic [on/off]
-╠${prefix}antiwame [on/off]
-╠${prefix}autoreply [on/off]
-╠${prefix}nsfw [on/off]
-╠${prefix}promote [reply/tag]
-╠${prefix}demote [reply/tag]
-╠${prefix}react [reply emoji]
-╠${prefix}vote
-╠${prefix}devote
-╠${prefix}upvote
-╠${prefix}checkvote
-╠${prefix}delvote
-╠═══════✪「 MAKER 」
+await khufuBotInc.send5ButImg(from, `╔═══════✪「 مالك 」	
+╠ ${prefix}خاص
+بيخلي البوت خاص ياغالي 🥰
+════════════════
+╠ ${prefix}للجميع
+بيخلي البوت للجميع ياغالي 🥰
+════════════════
+╠ ${prefix}اخرس [on/off]
+بيوقف البوت في المجموعه ياغالي 🥰
+════════════════
+╠ ${prefix}انضم [لينك]
+بتحط لينك جروب بعد الامر بيخش الجروب 🥰
+════════════════
+╠ ${prefix}ترك
+البوت بيطلع من الجروب ​​​​​​​​​​​​​​​​​​​​​​​​🥰
+════════════════
+╠ ${prefix}تغييرالاسم
+بيغير اسم البوت 🥰
+════════════════
+╠ ${prefix}مساء الخير
+صوت🥰
+════════════════
+╠ ${prefix}مصطفي
+صوت🥰
+════════════════
+╠ ${prefix}Cool Rebel
+صوت🥰
+════════════════
+╠ ${prefix}صباح الخير
+صوت🥰
+════════════════
+╠ ${prefix}رمضان كريم
+صوت🥰 ​​​​​​​​​​​​​​​​
+════════════════
+╠ ${prefix}بروفيل [صوره وعمل ريب]
+بيغير اسم البوت 🥰
+════════════════
+╠ ${prefix}اسمملصق
+بيغير اسم الملصق 🥰
+════════════════
+╠ ${prefix}بلوك [ريب/رقم]
+بيعمل بلوك 🥰
+════════════════
+╠ ${prefix}فك بلوك [ريب/رقم]
+بيفك بلوك 🥰
+════════════════
+════════════════
+════════════════
+════════════════
+╠═══════✪「 [جروب 」	        
+╠${prefix}اعدادتجروب
+اعدادت جروب ياغالي بس مش شغاله 😂
+════════════════
+╠${prefix}لينك
+بيجيب لينك المجموعه 😂
+════════════════
+╠${prefix}اسم الروم /اسم😂الروم/اسمالروم
+بيغير اسم الجروب ياغالي 😂
+════════════════
+╠${prefix}وصفالروم /وصف😂الروم
+بيغير وصف الروم ياغالي 😂
+════════════════
+╠${prefix}رستر
+بيغير لينك الروم 😂
+════════════════
+╠${prefix}اعدادت😂مشرف
+بيقفل وبيفتح اعدادات الروم ياغالي 😂
+════════════════
+╠${prefix}هاتو [الرقم]
+بيضيف اشخاص للمجموعه 😂
+════════════════
+╠${prefix}بان [ريب/رقم]
+بيطرد اي شخص من المجموعه ياغالي 😂
+════════════════
+╠${prefix}ء
+بيعمل منشن خافي 😂
+════════════════
+╠${prefix}تاج 
+بيبعت رساله لكل الي في الروم 😂
+════════════════
+╠${prefix}منع😂ربط😂المجموعه [on/off]
+بيمنع ارسل رابط المجموعه ال لو كونت مشرف 😂
+════════════════
+╠${prefix}منع😂لينك😂تيلجرام [on/off]
+بيمنع لينكات التيلجرام ياغالي 😂
+════════════════
+╠${prefix}منع😂لينك😂تيكتوك [on/off]
+بيمنع لينكات التيك توك
+════════════════
+╠${prefix}منع😂لينك😂يوتيوب [on/off]
+بيمنع لينكات يوتيوب ياغالي 😂
+════════════════
+╠${prefix}بالتوفيق ياغالي ❤ لازم تكتب
+ايموجي لم يكون في الاءومر
+════════════════
+╠${prefix}منع😂لينك😂انستجرام [on/off]
+بيمنع لينكات انستجرام 
+════════════════
+╠${prefix}منع😂لينك😂فيسبوك [on/off]
+بيمنع لينكات فيسبوك 
+════════════════
+╠${prefix}منع😂لينك😂تويتر [on/off]
+بيمنع لينكات تويتر ياغالي 😂
+════════════════
+╠${prefix}لينكات [on/off]
+بيمنع لينكات ياغالي 😂
+════════════════
+╠${prefix}منع😂فيروسات [on/off]
+بيمنع الفيروسات
+════════════════
+╠${prefix}منع😂شتايم [on/off]
+بيمنع الشتايم ياغالي😂
+════════════════
+╠${prefix}منعwame [on/off]
+بيمنع لينكات wame
+════════════════
+╠${prefix}فرفشه [on/off]
+البوت بيبعت صوتيات في المجموعه 😂
+════════════════
+╠${prefix}غير😂موفق
+بيرفض التصويت ياغالي 😂
+════════════════
+╠${prefix}مشرف
+بيخلي العضو العادي مشرف ياغالي 😂
+════════════════
+╠${prefix}نزلو
+بينزل المشرف لعضو عادي ياغالي 😂
+════════════════
+╠${prefix} ٠ ملحوظه ده صفر عربي 😂
+بيعلق علي الرسله اي اموجي انت هتكتبو
+════════════════
+╠${prefix}تصويت
+بيشغل ميزت التصويت 😂
+════════════════
+╠${prefix}النتيجه
+بيجيب نتيجه التصويت 😂
+════════════════
+╠${prefix}موفق😂علي
+بتوفق علي التصويت
+════════════════
+╠${prefix}حذفتصويت/حذف😂تصويت
+بيحذف التصويت 😂
+════════════════
+════════════════
+════════════════
+╠═══════✪「 صانع 」
 ╠${prefix}candy
 ╠${prefix}blackpinkneon
 ╠${prefix}deepsea
@@ -9045,7 +9131,7 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠ ${prefix}halloween
 ╠ ${prefix}watercolor
 ╠ ${prefix}classic
-╠═════✪「 DOWNLOAD 」	
+╠═════✪「 تحميل 」	
 ╠${prefix}instagram [url]
 ╠${prefix}igtv [url]
 ╠${prefix}igstory [username]
@@ -9064,7 +9150,7 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠${prefix}gitclone [repo link]
 ╠${prefix}soundcloud [url]
 ╠${prefix}zippyshare [url]
-╠═══════✪「 SEARCH 」	
+╠═══════✪「 بحث 」	
 ╠${prefix}play [query]
 ╠${prefix}song [query]
 ╠${prefix}yts [query]
@@ -9091,7 +9177,7 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠${prefix}wattpad [query]
 ╠ ${prefix}mcserver [ip|port]
 ╠ ${prefix}drakor [query]
-╠═══════✪「 CONVERT 」
+╠═══════✪「 يتحول 」
 ╠ ${prefix}toimage [reply stick]
 ╠ ${prefix}sticker [reply img|gif]
 ╠ ${prefix}take [reply img|gif|stik]
@@ -9120,7 +9206,7 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠${prefix}robot [reply aud]
 ╠${prefix}slow [reply aud]
 ╠${prefix}squirrel [reply aud]
-╠═══════✪「 IMG EFFECT 」
+╠═══════✪「 تأثير IMG 」
 ╠${prefix}wanted
 ╠${prefix}blur
 ╠${prefix}framed
@@ -9135,7 +9221,7 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠${prefix}beautifuleffect
 ╠${prefix}deleteeffect
 ╠${prefix}pixelate
-╠═══════✪「 RANDOM IMG 」
+╠═══════✪「 IMG العشوائي 」
 ╠${prefix}coffee
 ╠${prefix}bts
 ╠${prefix}woof
@@ -9161,8 +9247,8 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠${prefix}googleemoji
 ╠${prefix}pediaemoji
 ╠${prefix}microsoftemoji
-╠═══════✪「 ANIME 」
-╠${prefix}naruto
+╠═══════✪「 أنيمي 」
+╠${prefix}ناروتو
 ╠${prefix}yaoi
 ╠${prefix}neko2
 ╠${prefix}waifu
@@ -9210,7 +9296,7 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠${prefix}animemegumin
 ╠${prefix}smug2
 ╠${prefix}couplepp
-╠══════✪「 STICKER 」
+╠══════✪「 ملصق 」
 ╠ ${prefix}patrick
 ╠ ${prefix}emoji
 ╠ ${prefix}emojimix
@@ -9218,7 +9304,7 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠ ${prefix}ttp
 ╠ ${prefix}doge
 ╠ ${prefix}lovesticker
-╠════✪「 ANIME STICKER 」
+╠════✪「 ملصق انمي 」
 ╠${prefix}loli
 ╠${prefix}bully
 ╠${prefix}cuddle
@@ -9274,7 +9360,7 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠${prefix}spank
 ╠${prefix}hneko
 ╠${prefix}nwaifu
-╠═══════✪「 FUN 」
+╠═══════✪「 هزار 」
 ╠ ${prefix}how [text
 ╠ ${prefix}when [text]
 ╠ ${prefix}where [text]
@@ -9339,7 +9425,7 @@ await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」
 ╠ ${prefix}playboy
 ╠ ${prefix}fuckgirl
 ╠ ${prefix}playgirl
-╠══════✪「 SOUND 」
+╠══════✪「صوت اغاني 」
 ╠ ${prefix}sound1
 ╠ ${prefix}sound2
 ╠ ${prefix}sound3
@@ -9626,71 +9712,157 @@ case 'ownermenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Owner Menu')
-await khufuBotInc.send5ButImg(from, `╔═══════✪「 OWNER 」	
-╠ ${prefix}self
-╠ ${prefix}public
-╠ ${prefix}antitag
-╠ ${prefix}ban [add/del]
-╠ ${prefix}banchat [on/off]
-╠ ${prefix}join [link]
-╠ ${prefix}leavegc
-╠ ${prefix}setbio
-╠ ${prefix}block [user]
-╠ ${prefix}unblock [user]
-╠ ${prefix}bcgroup [text]
-╠ ${prefix}bcall [text]
-╠ ${prefix}bcimage [image]
-╠ ${prefix}bcvideo [video]
-╠ ${prefix}bcaudio [audio]
-╠ ${prefix}bcloc [text]
-╠ ${prefix}setppbot [image]
-╠ ${prefix}setexif
+await khufuBotInc.send5ButImg(from, `╔═══════✪「 المالك 」	
+╠ ${prefix}خاص
+بيخلي البوت خاص ياغالي 🥰
+════════════════
+╠ ${prefix}للجميع
+بيخلي البوت للجميع ياغالي 🥰
+════════════════
+╠ ${prefix}اخرس [on/off]
+بيوقف البوت في المجموعه ياغالي 🥰
+════════════════
+╠ ${prefix}انضم [لينك]
+بتحط لينك جروب بعد الامر بيخش الجروب 🥰
+════════════════
+╠ ${prefix}ترك
+البوت بيطلع من الجروب ​​​​​​​​​​​​​​​​​​​​​​​​🥰
+════════════════
+╠ ${prefix}تغييرالاسم
+بيغير اسم البوت 🥰
+════════════════
+╠ ${prefix}مساء الخير
+صوت🥰
+════════════════
+╠ ${prefix}مصطفي
+صوت🥰
+════════════════
+╠ ${prefix}Cool Rebel
+صوت🥰
+════════════════
+╠ ${prefix}صباح الخير
+صوت🥰
+════════════════
+╠ ${prefix}رمضان كريم
+صوت🥰 ​​​​​​​​​​​​​​​​
+════════════════
+╠ ${prefix}بروفيل [صوره وعمل ريب]
+بيغير اسم البوت 🥰
+════════════════
+╠ ${prefix}اسمملصق
+بيغير اسم الملصق 🥰
+════════════════
+╠ ${prefix}بلوك [ريب/رقم]
+بيعمل بلوك 🥰
+════════════════
+╠ ${prefix}فك بلوك [ريب/رقم]
+بيفك بلوك 🥰
+════════════════
+════════════════
+════════════════
+═══════════════
 ╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "قناتي 😚♥","url": `${websitex}`}},{"urlButton": {"displayText": "ozx 💗","url": `${botscript}`}},{"quickReplyButton": {"displayText": "معلومات اكتر 💗","id": 'donate'}},{"quickReplyButton": {"displayText": "المالك💗","id": 'owner'}}] )
 break
 case 'groupmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Group Menu')
-await khufuBotInc.send5ButImg(from, `╔═══════✪「 GROUP 」	
-╠${prefix}groupsetting
-╠${prefix}grouplink
-╠${prefix}ephemeral [option]
-╠${prefix}setgcpp [image]
-╠${prefix}setname [text]
-╠${prefix}setdesc [text]
-╠${prefix}group
-╠${prefix}botgroups
-╠${prefix}resetgrouplink
-╠${prefix}editinfo [option]
-╠${prefix}add [user]
-╠${prefix}kick [reply/tag]
-╠${prefix}hidetag [text]
-╠${prefix}tagall [text]
-╠${prefix}autosticker [on/off]
-╠${prefix}autostickerpc [on/off]
-╠${prefix}leveling [on/off]
-╠${prefix}antilinkgc [on/off]
-╠${prefix}antilinktg [on/off]
-╠${prefix}antilinktt [on/off]
-╠${prefix}antilinkytch [on/off]
-╠${prefix}antilinkytvid [on/off]
-╠${prefix}antilinkig [on/off]
-╠${prefix}antilinkfb [on/off]
-╠${prefix}antilinktwit [on/off]
-╠${prefix}antilinkall [on/off]
-╠${prefix}antivirus [on/off]
-╠${prefix}antitoxic [on/off]
-╠${prefix}antiwame [on/off]
-╠${prefix}nsfw [on/off]
-╠${prefix}promote [reply/tag]
-╠${prefix}demote [reply/tag]
-╠${prefix}react [reply emoji]
-╠${prefix}getpp [reply user]
-╠${prefix}vote
-╠${prefix}devote
-╠${prefix}upvote
-╠${prefix}checkvote
-╠${prefix}delvote
+await khufuBotInc.send5ButImg(from, `╔═══════✪「 جروب 」	 
+╠${prefix}اعدادتجروب
+اعدادت جروب ياغالي بس مش شغاله 😂
+════════════════
+╠${prefix}لينك
+بيجيب لينك المجموعه 😂
+════════════════
+╠${prefix}اسم الروم /اسم😂الروم/اسمالروم
+بيغير اسم الجروب ياغالي 😂
+════════════════
+╠${prefix}وصفالروم /وصف😂الروم
+بيغير وصف الروم ياغالي 😂
+════════════════
+╠${prefix}رستر
+بيغير لينك الروم 😂
+════════════════
+╠${prefix}اعدادت😂مشرف
+بيقفل وبيفتح اعدادات الروم ياغالي 😂
+════════════════
+╠${prefix}هاتو [الرقم]
+بيضيف اشخاص للمجموعه 😂
+════════════════
+╠${prefix}بان [ريب/رقم]
+بيطرد اي شخص من المجموعه ياغالي 😂
+════════════════
+╠${prefix}ء
+بيعمل منشن خافي 😂
+════════════════
+╠${prefix}تاج 
+بيبعت رساله لكل الي في الروم 😂
+════════════════
+╠${prefix}منع😂ربط😂المجموعه [on/off]
+بيمنع ارسل رابط المجموعه ال لو كونت مشرف 😂
+════════════════
+╠${prefix}منع😂لينك😂تيلجرام [on/off]
+بيمنع لينكات التيلجرام ياغالي 😂
+════════════════
+╠${prefix}منع😂لينك😂تيكتوك [on/off]
+بيمنع لينكات التيك توك
+════════════════
+╠${prefix}منع😂لينك😂يوتيوب [on/off]
+بيمنع لينكات يوتيوب ياغالي 😂
+════════════════
+╠${prefix}بالتوفيق ياغالي ❤ لازم تكتب
+ايموجي لم يكون في الاءومر
+════════════════
+╠${prefix}منع😂لينك😂انستجرام [on/off]
+بيمنع لينكات انستجرام 
+════════════════
+╠${prefix}منع😂لينك😂فيسبوك [on/off]
+بيمنع لينكات فيسبوك 
+════════════════
+╠${prefix}منع😂لينك😂تويتر [on/off]
+بيمنع لينكات تويتر ياغالي 😂
+════════════════
+╠${prefix}لينكات [on/off]
+بيمنع لينكات ياغالي 😂
+════════════════
+╠${prefix}منع😂فيروسات [on/off]
+بيمنع الفيروسات
+════════════════
+╠${prefix}منع😂شتايم [on/off]
+بيمنع الشتايم ياغالي😂
+════════════════
+╠${prefix}منعwame [on/off]
+بيمنع لينكات wame
+════════════════
+╠${prefix}فرفشه [on/off]
+البوت بيبعت صوتيات في المجموعه 😂
+════════════════
+╠${prefix}غير😂موفق
+بيرفض التصويت ياغالي 😂
+════════════════
+╠${prefix}مشرف
+بيخلي العضو العادي مشرف ياغالي 😂
+════════════════
+╠${prefix}نزلو
+بينزل المشرف لعضو عادي ياغالي 😂
+════════════════
+╠${prefix} ٠ ملحوظه ده صفر عربي 😂
+بيعلق علي الرسله اي اموجي انت هتكتبو
+════════════════
+╠${prefix}تصويت
+بيشغل ميزت التصويت 😂
+════════════════
+╠${prefix}النتيجه
+بيجيب نتيجه التصويت 😂
+════════════════
+╠${prefix}موفق😂علي
+بتوفق علي التصويت
+════════════════
+╠${prefix}حذفتصويت/حذف😂تصويت
+بيحذف التصويت 😂
+════════════════
+════════════════
+════════════════
 ╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "قناتي 😚♥","url": `${websitex}`}},{"urlButton": {"displayText": "ozx 💗","url": `${botscript}`}},{"quickReplyButton": {"displayText": "معلومات اكتر 💗","id": 'donate'}},{"quickReplyButton": {"displayText": "المالك💗","id": 'owner'}}] )
 break
 case 'rpgmenu':
@@ -10191,9 +10363,9 @@ case 'soundmenu':
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Sound Menu')
 await khufuBotInc.send5ButImg(from, `╔═══════✪「 Sound 」	
-╠ ${prefix}sound1
-╠ ${prefix}sound2
-╠ ${prefix}sound3
+╠ ${prefix}Sound1
+╠ ${prefix}Sound2
+╠ ${prefix}Sound3
 ╠ ${prefix}sound4
 ╠ ${prefix}sound5
 ╠ ${prefix}sound6
@@ -10492,27 +10664,27 @@ reply(`شكرا لي استخدامك البوت  نتمني ان يكون ال�
 
  
 
-رقم اوزكس للتواصل واتس اب :  
+رقم مصطفي للتواصل واتس اب :  
 
- https://wa.me/+201027844506
+ https://wa.me/+201030982295
 
-رقم خوفو للتواصل واتس اب :  
+رقم مصطفي للتواصل واتس اب :  
 
- https://wa.me/+201121968769
+ https://wa.me/+201030982295
 
-قناه اوزكس يوتيوب :  
+قناه مصطفي يوتيوب :  
 
- https://youtube.com/channel/UCB3Z3phhszGj8FBdaJmIdJQ
+https://www.youtube.com/@vvvMostafevvv57012Ahmed
 
-قناه خوفو يوتيوب :  
+قناه مصطفي يوتيوب :  
 
- https://youtube.com/channel/UCaWoQPfLiIY4dDp3WeWm7oA
+ https://www.youtube.com/@vvvMostafevvv57012Ahmed
 
 جروب لتجربه البوت و حل اي مشكله تظهر معاك في البوت ومساعدتك علي فهم البوت :  
 
-https://chat.whatsapp.com/F4dGv48uhUc0pQoZb58jiB 
+https://chat.whatsapp.com/BX0EwHnIUngBEJkj7KPlZW 
 
- نتمني ان تكون اشتركت في قناتنا وانضممت لنا في جروب الواتس اب وشكرا💗`)
+بوت Cool REBEL💗`)
 break
             default:
                 if (budy.startsWith('=>')) {

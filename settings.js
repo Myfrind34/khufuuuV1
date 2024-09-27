@@ -92,7 +92,7 @@ global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
 
-global.vcardowner = ['201030982295'] //ur owner number
+global.vcardowner = ['201550645457'] //ur owner number
 
 global.ownername = "Mostafe" //ur owner name
 
@@ -104,9 +104,9 @@ global.location = "Egypt" //ur location
 
 //bot bomdy 
 
-global.owner = ['201030982295']
+global.owner = ['201550645457']
 
-global.ownertag = '201030982295' //ur tag number
+global.ownertag = '201550645457' //ur tag number
 
 global.botname = 'ᴹᴿ᭄ Bot Whatsapp ×፝֟͜×' //ur bot name
 
@@ -118,9 +118,9 @@ global.botscript = 'https://www.youtube.com/@vvvMostafevvv57012Ahmed' //script l
 
 global.reactmoji = "✅" //ur menu react emoji
 
-global.themeemoji = "🔥" //ur theme emoji
+global.themeemoji = "🔍" //ur theme emoji
 
-global.packname = "201030982295" //ur sticker watermark packname
+global.packname = "Mostafe" //ur sticker watermark packname
 
 global.author = " 👑🔥 مصطفي🔥👑" //ur sticker watermark author
 
